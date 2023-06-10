@@ -1,0 +1,26 @@
+{
+  "type": "module",
+  "dependencies": {
+    "inquirer": "^9.2.7",
+    "qr-image": "^3.2.0"
+  },
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohitbhusal11/backend-learning-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohitbhusal11/backend-learning-node/issues"
+  },
+  "homepage": "https://github.com/mohitbhusal11/backend-learning-node#readme",
+  "description": ""
+}
