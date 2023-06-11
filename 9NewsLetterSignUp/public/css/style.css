@@ -1,0 +1,14 @@
+html{
+    background-color: rgb(12, 5, 23);
+}
+body{
+    border-radius: 2%;
+    width: 25%;
+    padding: 5%;
+    margin: auto;
+    margin-top:10%;
+}
+body input{
+    margin-top:10px;
+    margin-bottom: 10px;
+}
