@@ -17,6 +17,27 @@
   <div id="recipeContainer" class="hidden">
 
     <!-- If no recipe yet, show: -->
+    <% if(locals.recipe) {%>
+      <h2 id="recipeTitle">
+        <%= recipe.name =%>
+      </h2>
+
+      <h3>Ingredient</h3>
+      <ul id="ingredient">
+        <li>
+          <%= recipe.ingredient.protein.name %>, <%= recipe.ingredient.protein.preparation %>
+        </li>
+        <li>
+          <%= recipe.ingredients.salsa.name %>
+        </li>
+        <%= recipe.ingredients.toppings.forEach(topping =?{
+          %?
+        })  %>
+        <li>
+        </li>
+
+      </ul>
+    }
     <h2>Pick your favourite taco ingredient 👆</h2>
     <!-- Else, show the recipe name e.g. <h2>Recipe name</h2>-->
 
