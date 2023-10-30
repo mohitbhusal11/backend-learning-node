@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Find Gender</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            background-color: rgb(0, 0, 0);
+            text-align: center;
+        }
+        #form{
+            margin-top: 100px;
+        }
+        #formLabel{
+            font-size: 50px;
+        }
+        #formId{
+            margin: 10px 0px;
+            padding: 8px 80px;
+            border-color: black;
+            color: black;
+            font-size: 15px;
+            font-style: italic;
+        }
+        #formId:hover{
+            background-color:rgb(196, 183, 166);
+        }
+        #formSubmit{
+            margin: 10px 0px;
+            padding: 10px 20px;
+            color: black;
+            background: white;
+        }
+    </style>
+</head>
+<body>
+    <form id="form" action="/info" method="post">
+        <label id="formLabel" for="nameInput">Enter Your Name</label><br>
+        <input id="formId" type="text" name="name" placeholder="Your Name"><br>
+        <input id="formSubmit" type="submit" value="Submit">
+    </form>
+</body>
+</html>

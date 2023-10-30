@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/26 selfWorkProject/public/style.css">
+    <title>Gender info</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            background-color: rgb(0, 0, 0);
+            text-align: center;
+        }
+        .container{
+            margin: 80px;
+            align-items:center;
+        }
+        #name{
+            font-size: 30px;
+            font-weight: 600;
+            margin: 15px;
+        }
+        #gender{
+            font-size: 30px;
+            font-weight: 600;
+            margin: 15px;
+        }
+        #prob{
+            font-size: 30px;
+            font-weight: 600;
+            margin: 15px;
+        }
+        #details{
+            font-size: 50px;
+            font-weight: 600;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p id="details">Your Details</p>
+        <p id="name">Name : <%= name %></p>
+        <p id="gender">Gender : <%= gender%></p>
+        <p id="prob">Probability : <%= prob%></p>
+    </div>
+</body>
+</html>
