@@ -46,12 +46,70 @@ app.post("/jokes", (req, res) =>{
   res.json(result);
 })
 //5. PUT a joke
-
+app.put("/jokes/:id",(req, res) =>{
+  const userId = parseInt(req.params.id);
+  const replace = {
+    id : userId,
+    jokeText : req.body.text,
+    jokeType : req.body.type,
+  }
+  const findObjIndex = jokes.findIndex((joke)=>{
+    if(joke.id === userId){
+      return true;
+    }
+  })
+  jokes[findObjIndex] = replace;    
+  res.json(replace);
+})
 //6. PATCH a joke
-
+app.patch("/jokes/:id", (req, res) =>{
+  const userId = parseInt(req.params.id);
+  const oldJoke = jokes.find(joke =>{
+    if(joke.id === userId){
+      return true;
+    }
+  })
+  // console.log("yaha tak thik hai")
+  const replace = {
+    id : userId,
+    jokeText : req.body.text || oldJoke.jokeText,
+    jokeType : req.body.type || oldJoke.jokeType,
+  }
+  const jokeIndex = jokes.findIndex(joke =>{
+    if(joke.id === userId){
+      return true;
+    }
+  })
+  jokes[jokeIndex] = replace;
+  res.json(replace);
+})
 //7. DELETE Specific joke
-
+app.delete("/jokes/:id",(req, res) =>{
+  const userId = parseInt(req.params.id);
+  if(userId >= jokes.length){
+    const err = {error : "Jokes with id: " + userId + " not found. No jokes were deleted"}
+    res.json(err);
+  }
+  const jokeIndex = jokes.findIndex(joke =>{
+    if(joke.id === userId){
+      return true;
+    }
+  })
+  jokes.splice(jokeIndex,1);
+  res.json("ok");
+})
 //8. DELETE All jokes
+app.delete("/all", (req, res) =>{
+  const userKey = req.query.apiKey;
+  if(userKey === masterKey){
+    jokes.splice(0,jokes.length);
+    res.json(200);
+  }else{
+    const err = {err : "api Key is invalid"}
+    res.json(err);
+  }
+})
+
 
 app.listen(port, () => {
   console.log(`Successfully started server on port ${port}.`);
